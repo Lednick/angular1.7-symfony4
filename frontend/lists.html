@@ -1,0 +1,27 @@
+<label>Search <input type="text" ng-change="doSearch()" ng-model="search" name="search"></label>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>
+            <div>
+                <a href="/list/add">
+                    <button>Add</button>
+                </a>
+            </div>
+        </th>
+    </tr>
+    <tr ng-repeat="(key, value) in lists">
+        <td>{{ value.id }}</td>
+        <td>{{ value.name }}</td>
+        <td><a href="list/{{value.id}}"><button>View</button></a></td>
+    </tr>
+</table>
+
+
+<!--
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

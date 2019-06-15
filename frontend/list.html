@@ -1,0 +1,42 @@
+<div>
+    <div style="display: flex; flex-direction: row">
+        <div style=" flex: 0 0 90px">Id</div>
+        <div>{{list.id}}</div>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <div style=" flex: 0 0 90px">Name</div>
+        <div>{{list.name}}</div>
+    </div>
+</div>
+
+<div style="display: flex; flex-direction: row;">
+    <div style=" flex: 0 0 90px">Todos</div>
+    <div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="(key, todo) in list.todos">
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.name }}</td>
+                <td>
+                    <div>
+                        <button ng-click="deleteTodo(todo.id)">Delete</button>
+                    </div>
+                </td>
+                <!--        <td><a href="/list/{{value.id}}">Delete</a></td>-->
+            </tr>
+        </table>
+    </div>
+    <div><a href="/list/{{ list.id }}/todo/add">
+        <button>Add</button>
+    </a></div>
+</div>
+
+
+<!--
+Copyright 2019 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
